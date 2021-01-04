@@ -8,7 +8,7 @@
     </head>
 
     <body>
-        <div class= "jumbotron">
+        <div class= "jumbotron jumbo">
             <h1>Pokemon Challenge Randomizer</h1>
         </div>
 
@@ -49,27 +49,45 @@
                 <div class= "col d-flex flex-column justify-content-center align-items-center">
                     <span>Select Modifiers:</span>
                     <div class="checkbox d-flex flex-column">
-                        <label><input type="checkbox" value="">Nuzlocke</label>
-                        <label><input type="checkbox" value="">No Healing</label>
-                        <label><input type="checkbox" value="">No Items</label>
+                        <label><input type="checkbox" value="nuzlocke">Nuzlocke</label>
+                        <label><input type="checkbox" value="noHealing">No Healing</label>
+                        <label><input type="checkbox" value="noItems">No Items</label>
                     </div>   
                 </div>
             </div>
         </div>
-
-        <div class ="container">
-            <div class ="row justify-content-center">
-                <div class="col d-flex flex-column align-items-center">1</div>
-                <div class="col d-flex flex-column align-items-center">2</div>
-                <div class="col d-flex flex-column align-items-center">3</div>
+        <hr>
+        <div class="container">
+            <div class="row justify-content-center pb-2">
+                <div class="col d-flex flex-column align-items-center">
+                    <img id="pic1" width="96" height="96"></img>
+                </div>
+                <div class="col d-flex flex-column align-items-center">
+                    <img id="pic2" width="96" height="96"></img>
+                </div>
+                <div class="col d-flex flex-column align-items-center">
+                    <img id="pic3" width="96" height="96"></img>
+                </div>
             </div>
-            <div class ="row justify-content-center">
-                <div class="col d-flex flex-column align-items-center">4</div>
-                <div class="col d-flex flex-column align-items-center">5</div>
-                <div class="col d-flex flex-column align-items-center">6</div>
+            <div class ="row justify-content-center pt-2">
+                <div class="col d-flex flex-column align-items-center">
+                    <img id="pic4" width="96" height="96"></img>
+                </div>
+                <div class="col d-flex flex-column align-items-center">
+                    <img id="pic5" width="96" height="96"></img>
+                </div>
+                <div class="col d-flex flex-column align-items-center">
+                    <img id="pic6" width="96" height="96"></img>
+                </div>
             </div>
         </div>
-
+        <hr>
+        <div class="container">
+            <div class="row justify-content-center">
+                <button class="btn btn-secondary" onclick="genTeam()">Generate Team</button>
+            </div>
+        </div>
+        
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     </body>

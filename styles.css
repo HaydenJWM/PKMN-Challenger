@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(60, 68, 68);
+    color: white;
+}
+
+.jumbo{
+    background-color: rgb(31, 30, 30);
+}
+
+hr{
+    height: 1px;
+    border-width: 0;
+    background-color: #6d6d6dec;
+    width: 50%;
+}
