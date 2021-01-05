@@ -36,19 +36,22 @@ let versionExclusives = {red: [27,28,37,38,52,53,69,70,71,126,127],
                          shield: [83,127,138,139,273,274,275,250,303,338,371,372,373,381,383,483,554,555,559,560,574,575,576,627,628,633,634,635,641,643,684,685,692,693,716,766,776,782,783,784,791,841,865,874,888]};
 
 //Lists all pokemon that are not accessable in the generation 8 games due to Dexit.
+//Courtesy of NAEK
 let notInGalar = [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 46, 47, 48, 49, 56, 57, 69, 70, 71, 74, 75, 76, 84, 85, 86, 87, 88, 89, 96, 97, 100, 101, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 165, 166, 167, 168, 179, 180, 181, 187, 188, 189, 190, 191, 192, 193, 198, 200, 201, 203, 204, 205, 207, 209, 210, 216, 217, 218, 219, 228, 229, 231, 232, 234, 235, 261, 262, 265, 266, 267, 268, 269, 276, 277, 283, 284, 285, 286, 287, 288, 289, 296, 297, 299, 300, 301, 307, 308, 311, 312, 313, 314, 316, 317, 322, 323, 325, 326, 327, 331, 332, 335, 336, 351, 352, 353, 354, 357, 358, 366, 367, 368, 370, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 408, 409, 410, 411, 412, 413, 414, 417, 418, 419, 424, 429, 430, 431, 432, 433, 441, 455, 456, 457, 469, 472, 476, 489, 490, 491, 492, 493, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 511, 512, 513, 514, 515, 516, 522, 523, 540, 541, 542, 580, 581, 585, 586, 594, 602, 603, 604, 648, 650, 651, 652, 653, 654, 655, 656, 657, 658, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 676, 720, 731, 732, 733, 734, 735, 739, 740, 741, 774, 775, 779];
 
-console.log(notInGalar);
-function getGame(){
-    console.log(document.getElementById('gameList').value);
-}
-
 function genTeam(){
-    //Placeholder
-    document.getElementById('pic1').src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png";
-    document.getElementById('pic2').src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png";
-    document.getElementById('pic3').src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png";
-    document.getElementById('pic4').src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png";
-    document.getElementById('pic5').src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png";
-    document.getElementById('pic6').src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png";
+    let selectionIndex = document.getElementById('gameList').selectedIndex;
+    let generation = document.getElementById('gameList').options[selectionIndex].dataset.gen;
+    let game = document.getElementById('gameList').value;
+    let removedFromRandomPool = versionExclusives[game];
+    let maxPokeNumber = generationLimits["gen" + generation];
+
+    //Request 6 pokemon that fit the parameters
+    for(let x=0; x<6; x++){
+       let pokemonNo = Math.floor((Math.random() * maxPokeNumber) + 1);
+       while(removedFromRandomPool.indexOf(pokemonNo) != -1){
+            pokemonNo = Math.floor((Math.random() * maxPokeNumber) + 1);
+       }
+       console.log(pokemonNo);
+    }
 }
