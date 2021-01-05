@@ -10,3 +10,5 @@ Ruleset randomizer for Pokémon challenges.
 * Game/generation selection
 
 * Special rules (no healing, nuzlocke)
+
+**Data Amalgamation by [NAEK](https://naek.ca/)**
