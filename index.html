@@ -52,7 +52,8 @@
                         <label><input type="checkbox" value="nuzlocke">Nuzlocke</label>
                         <label><input type="checkbox" value="noHealing">No Healing</label>
                         <label><input type="checkbox" value="noItems">No Items</label>
-                        <label><input type="checkbox" value="onlyIngame">Only Ingame Pokemon</label>
+                        <label><input type="checkbox" value="noItems">Use Regional Pokedex *UNFINISHED*</label>
+                        <label><input id="ingame" type="checkbox" value="onlyIngame">No Version Exclusives</label>
                     </div>   
                 </div>
             </div>
@@ -85,7 +86,19 @@
         <hr>
         <div class="container">
             <div class="row justify-content-center">
-                <button class="btn btn-secondary" onclick="genTeam()">Generate Team</button>
+                <!--The padding on these isnt perfect, I should implement a column here-->
+                <div class="form-group pr-4">
+                    <label for="team-size">Select Team Size: </label>
+                    <select class="form-control" id="teamSizeList" name="team-size">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <button class="btn btn-secondary plr-4" onclick="genTeam()">Generate Team</button>
             </div>
         </div>
         
